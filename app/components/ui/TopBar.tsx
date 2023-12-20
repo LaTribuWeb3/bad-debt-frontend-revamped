@@ -1,7 +1,6 @@
-import { FaMediumM } from "react-icons/fa";
+import { FaMediumM, FaGithub } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoLogoDiscord } from "react-icons/io5";
-import { FaGithub } from "react-icons/fa";
 export default function TopBar(){
     return <div className="fixed top-0 right-0 p-2 md:p-4 flex space-x-1 md:space-x-4">
         <a href="https://twitter.com/risk_dao" target="_blank" rel="noopener noreferrer">
