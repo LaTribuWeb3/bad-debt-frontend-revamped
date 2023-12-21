@@ -1,14 +1,15 @@
 'use client'
 import { ColumnDef } from "@tanstack/react-table";
+import { ProtocolResult } from "./ProtocolResult.type";
 
 
-export const columns: ColumnDef<market>[] = [
+export const columns: ColumnDef<ProtocolResult>[] = [
     {
         accessorKey: "name",
         header: "Name"
     },
     {
-        accessorKey: "blockchain",
+        accessorKey: "chains",
         header: 'Blockchain(s)'
     },
     {
@@ -32,7 +33,7 @@ export const columns: ColumnDef<market>[] = [
         header: 'Avg. Risk Level'
     },
     {
-        accessorKey: "details",
+        accessorKey: "layers",
         header: 'Details'
     },
 ]
