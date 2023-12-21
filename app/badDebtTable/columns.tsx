@@ -19,7 +19,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("tvl"))
             const formatted = FriendlyFormatNumber(amount);
-            return <div className="text-right font-medium">{formatted}</div>
+            return <div className="text-right font-medium">${formatted}</div>
         }
     },
     {
@@ -28,7 +28,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("totalBadDebt")).toFixed(2)
             const formatted = FriendlyFormatNumber(-amount);
-            return <div className="text-right font-medium">{formatted}</div>
+            return <div className="text-right font-medium">${formatted}</div>
         }
     },
     {
