@@ -1,4 +1,4 @@
-import Footer from "./components/Footer";
+import Footer from "./components/ui/Footer";
 import ThemeSwitch from "./components/ui/ThemeSwitch";
 import TopBar from "./components/ui/TopBar";
 
