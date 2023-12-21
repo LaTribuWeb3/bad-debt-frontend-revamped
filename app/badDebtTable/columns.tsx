@@ -1,7 +1,7 @@
 'use client'
 import { ColumnDef } from "@tanstack/react-table";
 import { ProtocolResult } from "./ProtocolResult.type";
-import { FriendlyFormatNumber } from "@/lib/utils";
+import { FriendlyFormatNumber, formatElapsedTime } from "@/lib/utils";
 
 
 export const columns: ColumnDef<ProtocolResult>[] = [
@@ -42,7 +42,12 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "updated",
-        header: 'Last Update'
+        header: 'Last Update',
+        cell: ({ row }) => {
+            const timestamp = Number(row.getValue("updated"));
+            const formatted = formatElapsedTime(timestamp);
+            return <div className="text-right font-medium">{formatted}</div>
+        }
     },
     {
         accessorKey: "averageRiskLevel",
