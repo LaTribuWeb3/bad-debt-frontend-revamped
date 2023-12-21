@@ -19,7 +19,7 @@ export default class DataService {
         const protocolResults = await SimpleCacheService.GetAndCache(
             `GetProtocolResults-${dateStr}`,
             () => GetGithubData(dateStr),
-            10 * 60 * 1000
+            15 * 60 * 1000
         );
 
         return protocolResults;
