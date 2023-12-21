@@ -1,4 +1,4 @@
-interface market {
+export interface market {
     name: string,
     blockchain: string[],
     tvl: number,
