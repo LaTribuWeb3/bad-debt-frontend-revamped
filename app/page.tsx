@@ -1,6 +1,6 @@
-import Footer from "./components/ui/Footer";
-import ThemeSwitch from "./components/ui/ThemeSwitch";
-import TopBar from "./components/ui/TopBar";
+import Footer from "./Footer";
+import ThemeSwitch from "./ThemeSwitch";
+import TopBar from "./TopBar";
 
 export default function Home() {
   return (
