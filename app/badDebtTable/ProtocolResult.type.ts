@@ -8,7 +8,6 @@ export interface ProtocolResult {
   deposits: number;
   borrows: number;
   badDebtRatio: number;
-  calculatedBorrows: number;
   averageRiskLevel?: number;
   usersWithBadDebtCount: number;
   dataFileLink: string;

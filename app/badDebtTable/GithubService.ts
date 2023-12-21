@@ -51,7 +51,6 @@ export default async function GetGithubData(dateStr: string): Promise<ProtocolRe
                 name: protocolFileContents[0].name,
                 chains: [protocolFileContents[0].chain],
                 borrows: normalize(protocolFileContents[0].borrows, decimals),
-                calculatedBorrows: normalize(protocolFileContents[0].calculatedBorrows, decimals),
                 dataFileLink: protocolFileContents[0].link,
                 decimals: decimals,
                 deposits: normalize(protocolFileContents[0].deposits, decimals),
@@ -67,7 +66,6 @@ export default async function GetGithubData(dateStr: string): Promise<ProtocolRe
                 name: protocolFileContents[0].name,
                 chains: [],
                 borrows: 0,
-                calculatedBorrows: 0,
                 dataFileLink: '',
                 decimals: decimals,
                 deposits: 0,
@@ -85,7 +83,6 @@ export default async function GetGithubData(dateStr: string): Promise<ProtocolRe
                     name: fileContent.subName || fileContent.chain,
                     chains: [fileContent.chain],
                     borrows: normalize(fileContent.borrows, decimals),
-                    calculatedBorrows: normalize(fileContent.calculatedBorrows, decimals),
                     dataFileLink: fileContent.link,
                     decimals: decimals,
                     deposits: normalize(fileContent.deposits, decimals),
@@ -102,7 +99,6 @@ export default async function GetGithubData(dateStr: string): Promise<ProtocolRe
                 }
 
                 mainResult.borrows += subResult.borrows;
-                mainResult.calculatedBorrows += subResult.calculatedBorrows;
                 mainResult.deposits += subResult.deposits;
                 mainResult.totalBadDebt += subResult.totalBadDebt;
                 mainResult.tvl += subResult.tvl;

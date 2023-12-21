@@ -54,9 +54,6 @@ export function getToday() {
 }
 
 export function normalize(bnString: string, decimal: number) {
-  if(bnString === undefined){
-    return 37707
-  }
   const base = new BigNumber(bnString);
   const factor = new BigNumber(10).pow(decimal);
 
