@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import ThemeSwitch from "./ThemeSwitch";
 import TopBar from "./TopBar";
+import MarketDataTable from "./badDebtTable/BadDebtTable";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <TopBar />
       <ThemeSwitch />
     <main className="flex bg-white dark:bg-darkThemeBg min-h-screen text-black dark:text-white flex-col items-center justify-between p-24">
-      test
+      <MarketDataTable />
     <Footer />
     </main>
     </div>

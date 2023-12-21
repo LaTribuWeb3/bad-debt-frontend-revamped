@@ -17,7 +17,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         header: 'TVL'
     },
     {
-        accessorKey: "badDebt",
+        accessorKey: "totalBadDebt",
         header: 'Bad Debt'
     },
     {
@@ -25,7 +25,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         header: 'Bad Debt Ratio'
     },
     {
-        accessorKey: "lastUpdate",
+        accessorKey: "updated",
         header: 'Last Update'
     },
     {

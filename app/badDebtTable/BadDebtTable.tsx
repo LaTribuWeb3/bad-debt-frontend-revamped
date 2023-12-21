@@ -1,8 +1,9 @@
 import { DataTable } from "@/components/ui/data-table";
-import { market } from "./marketTypes";
 import { columns } from "./columns";
+import DataService from "@/lib/dataService";
 
-export default function MarketDataTable(marketsArray: market[]){
+export default async function MarketDataTable(){
+    const data = await DataService.GetProtocolResults('latest');
 
     return (
         <div className="container mx-auto py-10">

@@ -1,14 +1,16 @@
 export interface ProtocolResult {
-    name: string;
-    chains: string[];
-    tvl: number;
-    badDebt: number;
-    badDebtRatio: number;
-    lastUpdate: number;
-    riskLevel? : number;
-    decimals: number;
-    layers: number;
-    usersWithBadDebtCount?: number;
-    dataFileLink?: string;
-    subResults?: ProtocolResult[];
-  }
+  name: string;
+  chains: string[];
+  totalBadDebt: number;
+  updated: number;
+  decimals: number;
+  tvl: number;
+  deposits: number;
+  borrows: number;
+  badDebtRatio: number;
+  calculatedBorrows: number;
+  averageRiskLevel?: number;
+  usersWithBadDebtCount: number;
+  dataFileLink: string;
+  subResults?: ProtocolResult[];
+}
