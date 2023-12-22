@@ -2,7 +2,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { ProtocolResult } from "./ProtocolResult.type";
 import { FriendlyFormatNumber, formatElapsedTime } from "@/lib/utils";
-
+import Image from 'next/image'
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
@@ -11,7 +11,11 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "chains",
-        header: 'Blockchain(s)'
+        header: 'Blockchain(s)',
+        cell: ({ row }) => {
+            const chains:string[] = row.getValue("chains");
+            return <div className="flex space-x-2 flex-wrap justify-center">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
+        }
     },
     {
         accessorKey: "tvl",
