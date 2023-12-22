@@ -109,6 +109,7 @@ export default async function GetGithubData(dateStr: string): Promise<ProtocolRe
             protocolResults.push(mainResult);
         }
     }
+    protocolResults.sort((a, b) => b.tvl - a.tvl);
 
     return protocolResults;
 }
