@@ -31,9 +31,9 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         accessorKey: "totalBadDebt",
         header: 'Bad Debt',
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("totalBadDebt"))
+            const amount = Number(parseFloat(row.getValue("totalBadDebt")).toFixed(2))
             const formatted = FriendlyFormatNumber(-amount);
-            return <div className="text-right font-medium">${formatted}</div>
+            return <CustomTooltip content={amount}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
