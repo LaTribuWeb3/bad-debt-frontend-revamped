@@ -59,7 +59,13 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         header: 'Avg. Risk Level'
     },
     {
-        accessorKey: "layers",
-        header: 'Details'
+        accessorKey: "subResults",
+        header: 'Details',
+        cell: ({ row }) => {
+            const usersWithBadDebtCount = Number(row.getValue("usersWithBadDebtCount"));
+            const subResults = row.getValue("subResults");
+            
+            return <div className="text-right font-medium">{subResults ? `sous résultats` : `${usersWithBadDebtCount} insolvent accounts`}</div>
+        }
     },
 ]
