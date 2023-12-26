@@ -3,6 +3,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ProtocolResult } from "./ProtocolResult.type";
 import { FriendlyFormatNumber, formatElapsedTime } from "@/lib/utils";
 import Image from 'next/image'
+import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
@@ -23,14 +24,14 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("tvl")).toFixed(2))
             const formatted = FriendlyFormatNumber(amount);
-            return <div className="text-right font-medium">${formatted}</div>
+            return <CustomTooltip content={amount}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
         accessorKey: "totalBadDebt",
         header: 'Bad Debt',
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("totalBadDebt")).toFixed(2)
+            const amount = parseFloat(row.getValue("totalBadDebt"))
             const formatted = FriendlyFormatNumber(-amount);
             return <div className="text-right font-medium">${formatted}</div>
         }
