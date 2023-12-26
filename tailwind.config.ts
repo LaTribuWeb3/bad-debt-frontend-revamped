@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         darkThemeBg: '#11191f'
       },
+      backgroundColor: ['odd', 'even'],
       keyframes: {
         "accordion-down": {
           from: { height: 0 },

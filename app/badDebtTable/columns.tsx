@@ -14,14 +14,14 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         header: 'Blockchain(s)',
         cell: ({ row }) => {
             const chains:string[] = row.getValue("chains");
-            return <div className="flex space-x-2 flex-wrap items-center mx-auto max-w-[200px]">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden mb-2 mx-1"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
+            return <div className="flex flex-wrap items-center mx-auto max-w-[200px]">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
         }
     },
     {
         accessorKey: "tvl",
         header: 'TVL',
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("tvl"))
+            const amount = Number(parseFloat(row.getValue("tvl")).toFixed(2))
             const formatted = FriendlyFormatNumber(amount);
             return <div className="text-right font-medium">${formatted}</div>
         }
