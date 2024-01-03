@@ -94,3 +94,12 @@ export function formatElapsedTime(unixTimestamp: number): string {
       return `Just now`; // State it as an ephemeral whisper in the fabric of time.
   }
 }
+
+
+export function formatCurrency(value: number): string {
+  // Invoke the ancient rites of localization to format the number
+  return value.toLocaleString('en-US', {
+      style: 'decimal', // Declare the style as decimal for grouping
+      maximumFractionDigits: 0, // Refrain from displaying fractional parts
+  });
+}

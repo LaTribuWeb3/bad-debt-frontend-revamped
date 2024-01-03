@@ -1,7 +1,7 @@
 'use client'
 import { ColumnDef } from "@tanstack/react-table";
 import { ProtocolResult } from "./ProtocolResult.type";
-import { FriendlyFormatNumber, formatElapsedTime } from "@/lib/utils";
+import { FriendlyFormatNumber, formatCurrency, formatElapsedTime } from "@/lib/utils";
 import Image from 'next/image'
 import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
@@ -50,7 +50,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("tvl")).toFixed(2))
             const formatted = FriendlyFormatNumber(amount);
-            return <CustomTooltip content={amount}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
+            return <CustomTooltip content={formatCurrency(amount)}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
@@ -69,7 +69,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("totalBadDebt")).toFixed(2))
             const formatted = FriendlyFormatNumber(-amount);
-            return <CustomTooltip content={amount}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
+            return <CustomTooltip content={formatCurrency(-amount)}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
