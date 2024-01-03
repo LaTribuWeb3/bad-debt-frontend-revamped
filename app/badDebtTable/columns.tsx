@@ -4,13 +4,25 @@ import { ProtocolResult } from "./ProtocolResult.type";
 import { FriendlyFormatNumber, formatElapsedTime } from "@/lib/utils";
 import Image from 'next/image'
 import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { Button } from "@/components/ui/button";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
         accessorKey: "name",
-        header: "Name",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Name
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
-            const name:string = row.getValue("name");
+            const name: string = row.getValue("name");
             return <div className="flex flex-wrap items-center mx-auto max-w-[200px]"><div className="rounded-full overflow-hidden"><Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} /></div><div className="ml-1">{name}</div></div>
         }
     },
@@ -18,13 +30,23 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         accessorKey: "chains",
         header: 'Blockchain(s)',
         cell: ({ row }) => {
-            const chains:string[] = row.getValue("chains");
+            const chains: string[] = row.getValue("chains");
             return <div className="flex flex-wrap items-center mx-auto max-w-[200px]">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden m-1"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
         }
     },
     {
         accessorKey: "tvl",
-        header: 'TVL',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    TVL
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("tvl")).toFixed(2))
             const formatted = FriendlyFormatNumber(amount);
@@ -33,7 +55,17 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "totalBadDebt",
-        header: 'Bad Debt',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Bad Debt
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("totalBadDebt")).toFixed(2))
             const formatted = FriendlyFormatNumber(-amount);
@@ -42,7 +74,17 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "badDebtRatio",
-        header: 'Bad Debt Ratio',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Bad Debt Ratio
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("badDebtRatio")).toFixed(2);
             const formatted = FriendlyFormatNumber(-amount * 100);
@@ -60,7 +102,17 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "averageRiskLevel",
-        header: 'Avg. Risk Level'
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Avg. Risk Level
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
     },
     {
         accessorKey: "subResults",
@@ -69,10 +121,10 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             const usersWithBadDebtCount = Number(row.original.usersWithBadDebtCount);
             const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
-            
+
             return <div className="text-right font-medium">{subResults ? `sous résultats` : <a href={url} target="_blank" rel="noopener noreferrer">
-            {`${usersWithBadDebtCount} insolvent accounts`}
-          </a>}</div>
+                {`${usersWithBadDebtCount} insolvent accounts`}
+            </a>}</div>
         }
     },
 ]
