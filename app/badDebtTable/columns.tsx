@@ -9,13 +9,17 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     {
         accessorKey: "name",
         header: "Name",
+        cell: ({ row }) => {
+            const name:string = row.getValue("name");
+            return <div className="flex flex-wrap items-center mx-auto max-w-[200px]"><div className="rounded-full overflow-hidden"><Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} /></div><div className="ml-1">{name}</div></div>
+        }
     },
     {
         accessorKey: "chains",
         header: 'Blockchain(s)',
         cell: ({ row }) => {
             const chains:string[] = row.getValue("chains");
-            return <div className="flex flex-wrap items-center mx-auto max-w-[200px]">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
+            return <div className="flex flex-wrap items-center mx-auto max-w-[200px]">{chains.map((_, i) => <div key={i} className="rounded-full overflow-hidden m-1"><Image src={`/images/chains/${_.toLowerCase()}.webp`} width={28} height={28} alt={"blockchain logo"} /></div>)}</div>
         }
     },
     {
