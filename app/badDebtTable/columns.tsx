@@ -66,10 +66,13 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         accessorKey: "subResults",
         header: 'Details',
         cell: ({ row }) => {
-            const usersWithBadDebtCount = Number(row.getValue("usersWithBadDebtCount"));
+            const usersWithBadDebtCount = Number(row.original.usersWithBadDebtCount);
+            const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
             
-            return <div className="text-right font-medium">{subResults ? `sous résultats` : `${usersWithBadDebtCount} insolvent accounts`}</div>
+            return <div className="text-right font-medium">{subResults ? `sous résultats` : <a href={url} target="_blank" rel="noopener noreferrer">
+            {`${usersWithBadDebtCount} insolvent accounts`}
+          </a>}</div>
         }
     },
 ]
