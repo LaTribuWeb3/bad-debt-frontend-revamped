@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <TopBar />
       <ThemeSwitch />
-    <main className="flex bg-white dark:bg-darkThemeBg min-h-screen text-black dark:text-white flex-col items-center justify-between p-24">
+    <main className="flex bg-white dark:bg-darkThemeBg min-h-screen text-black dark:text-white flex-col items-center justify-between p-24 pb-0">
       <MarketDataTable />
     <Footer />
     </main>

@@ -23,6 +23,11 @@ module.exports = {
       lg: '18px',
       xl: '19px',
       '2xl': '20px',
+      '3xl': '2rem',     // for h1
+      '4xl': '1.75rem',  // for h2
+      '5xl': '1.5rem',   // for h3
+      '6xl': '1.25rem',  // for h4
+      '7xl': '1.125rem', // for h5
     },
     extend: {
       colors: {
