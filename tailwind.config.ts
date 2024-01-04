@@ -19,7 +19,10 @@ module.exports = {
       colors: {
         darkThemeBg: '#11191f'
       },
-      backgroundColor: ['odd', 'even'],
+      backgroundColor: {
+        'row-odd': '#f7fafc', // Example color, replace with your preference
+        'row-even': '#ffffff', // Example color, replace with your preference
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
