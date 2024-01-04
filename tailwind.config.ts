@@ -25,6 +25,10 @@ module.exports = {
         'dark-row-odd': '#19232b',
         'dark-row-even': '#141e26'
       },
+      borderColor: {
+        'dark-border': '#000000',
+        'dark-row-border': '#000000',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
