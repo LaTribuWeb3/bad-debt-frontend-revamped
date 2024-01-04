@@ -22,6 +22,8 @@ module.exports = {
       backgroundColor: {
         'row-odd': '#f7fafc',
         'row-even': '#ffffff',
+        'dark-row-odd': '#19232b',
+        'dark-row-even': '#141e26'
       },
       keyframes: {
         "accordion-down": {

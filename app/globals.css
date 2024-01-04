@@ -1,13 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer utilities {
     .tanstack-table tr:nth-child(odd) {
         @apply bg-row-odd;
     }
-
     .tanstack-table tr:nth-child(even) {
         @apply bg-row-even;
+    }
+    .dark .tanstack-table tr:nth-child(odd) {
+        @apply bg-dark-row-odd; 
+    }
+    .dark .tanstack-table tr:nth-child(even) {
+        @apply bg-dark-row-even; 
     }
 }
