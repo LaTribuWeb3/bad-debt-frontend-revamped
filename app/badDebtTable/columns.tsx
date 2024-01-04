@@ -69,7 +69,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("totalBadDebt")).toFixed(2))
             const formatted = FriendlyFormatNumber(-amount);
-            return <CustomTooltip content={formatCurrency(-amount)}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
+            return <CustomTooltip content={formatCurrency(-amount)}><div className="text-center font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
@@ -86,9 +86,9 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             )
         },
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("badDebtRatio")).toFixed(2);
+            const amount = parseFloat(row.getValue("badDebtRatio")).toFixed(0);
             const formatted = FriendlyFormatNumber(-amount * 100);
-            return <div className="text-right font-medium">{formatted}%</div>
+            return <div className="text-center font-medium">{formatted}%</div>
         }
     },
     {
