@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button";
+import { SubresourceIntegrityPlugin } from "next/dist/build/webpack/plugins/subresource-integrity-plugin";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
@@ -122,7 +123,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
 
-            return <div className="text-right font-medium">{subResults ? `sous résultats` : <a href={url} target="_blank" rel="noopener noreferrer">
+            return <div className="text-right font-medium">{subResults ? `Full dashboard for ${Object.keys(subResults).length} markets` : <a href={url} target="_blank" rel="noopener noreferrer">
                 {`${usersWithBadDebtCount} insolvent accounts`}
             </a>}</div>
         }
