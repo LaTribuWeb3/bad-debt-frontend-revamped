@@ -8,12 +8,21 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+    fontFamily: {
+      'sans': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+    },
+    lineHeight: {
+      DEFAULT: '1.5',
+    },
+    fontWeight: {
+      DEFAULT: '400',
+    },
+    fontSize: {
+      base: '16px',
+      md: '17px',
+      lg: '18px',
+      xl: '19px',
+      '2xl': '20px',
     },
     extend: {
       colors: {
