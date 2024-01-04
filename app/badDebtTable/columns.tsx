@@ -4,9 +4,8 @@ import { ProtocolResult } from "./ProtocolResult.type";
 import { FriendlyFormatNumber, formatCurrency, formatElapsedTime } from "@/lib/utils";
 import Image from 'next/image'
 import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button";
-import { SubresourceIntegrityPlugin } from "next/dist/build/webpack/plugins/subresource-integrity-plugin";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
