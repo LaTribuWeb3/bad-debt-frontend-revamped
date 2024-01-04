@@ -20,8 +20,8 @@ module.exports = {
         darkThemeBg: '#11191f'
       },
       backgroundColor: {
-        'row-odd': '#f7fafc', // Example color, replace with your preference
-        'row-even': '#ffffff', // Example color, replace with your preference
+        'row-odd': '#f7fafc',
+        'row-even': '#ffffff',
       },
       keyframes: {
         "accordion-down": {
