@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
 import { ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
@@ -119,10 +120,12 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         header: 'Details',
         cell: ({ row }) => {
             const usersWithBadDebtCount = Number(row.original.usersWithBadDebtCount);
+            const platform = row.original.name;
+
             const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
 
-            return <div className="font-medium">{subResults ? `Full dashboard for ${Object.keys(subResults).length} markets` : <a href={url} target="_blank" rel="noopener noreferrer">
+            return <div className="font-medium">{subResults ? <Link href={`/subresults?platform=${platform}`}>Full dashboard for {Object.keys(subResults).length} markets</Link>  : <a href={url} target="_blank" rel="noopener noreferrer">
                 {`${usersWithBadDebtCount} insolvent accounts`}
             </a>}</div>
         }
