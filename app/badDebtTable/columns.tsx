@@ -24,7 +24,14 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         },
         cell: ({ row }) => {
             const name: string = row.getValue("name");
-            return <div className="flex flex-wrap items-center mx-auto max-w-[200px]"><div className="rounded-full overflow-hidden"><Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} /></div><div className="ml-1">{name}</div></div>
+            return <div className="flex items-center mx-auto max-w-[200px]">
+                <div className="rounded-full overflow-hidden h-7 w-7">
+                    <Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} />
+                </div>
+                <div className="ml-1 flex items-center">
+                    {name}
+                </div>
+            </div>
         }
     },
     {
@@ -125,7 +132,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
 
-            return <div className="font-medium">{subResults ? <Link href={`/subresults?platform=${platform}`}>Full dashboard for {Object.keys(subResults).length} markets</Link>  : <a href={url} target="_blank" rel="noopener noreferrer">
+            return <div className="font-medium">{subResults ? <Link href={`/subresults?platform=${platform}`}>Full dashboard for {Object.keys(subResults).length} markets</Link> : <a href={url} target="_blank" rel="noopener noreferrer">
                 {`${usersWithBadDebtCount} insolvent accounts`}
             </a>}</div>
         }

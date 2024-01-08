@@ -10,7 +10,6 @@ interface BadDebtTableProps {
 
 
 export default function BadDebtTable({data}: BadDebtTableProps){
-
     return (
         <div className="container mx-auto py-10">
             <DataTable columns={columns} data={data} />

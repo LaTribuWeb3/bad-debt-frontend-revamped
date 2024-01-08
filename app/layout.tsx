@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
+import Footer from './Footer'
+import ThemeSwitch from './ThemeSwitch'
+import TopBar from './TopBar'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,7 +37,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
+        <TopBar />
+      <ThemeSwitch />
+    <main className="flex bg-white dark:bg-darkThemeBg min-h-screen text-black dark:text-white flex-col items-center justify-between px-72 py-24 pb-0">
+    <Image src={"/images/white-wordmark.png"} alt={"Risk DAO logo"} width={637} height={134} />
             {children}
+            <Footer />
+    </main>
         </Providers>
         </body>
     </html>
