@@ -3,7 +3,12 @@ import { columns } from "./columns";
 import DataService from "@/lib/dataService";
 import { dummyData } from "@/lib/dummyData";
 
-export default async function MarketDataTable(){
+// Define the props for MarketDataTable
+interface MarketDataTableProps {
+    date: Date;  // 'data' is an array of ProtocolResult
+}
+
+export default function MarketDataTable({date} : MarketDataTableProps){
     const data = dummyData;
 
     return (
