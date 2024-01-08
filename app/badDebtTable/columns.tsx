@@ -122,7 +122,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             const url = row.original.dataFileLink;
             const subResults = row.getValue("subResults");
 
-            return <div className="text-right font-medium">{subResults ? `Full dashboard for ${Object.keys(subResults).length} markets` : <a href={url} target="_blank" rel="noopener noreferrer">
+            return <div className="font-medium">{subResults ? `Full dashboard for ${Object.keys(subResults).length} markets` : <a href={url} target="_blank" rel="noopener noreferrer">
                 {`${usersWithBadDebtCount} insolvent accounts`}
             </a>}</div>
         }
