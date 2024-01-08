@@ -58,7 +58,7 @@ export const columns: ColumnDef<ProtocolResult>[] = [
         cell: ({ row }) => {
             const amount = Number(parseFloat(row.getValue("tvl")).toFixed(2))
             const formatted = FriendlyFormatNumber(amount);
-            return <CustomTooltip content={formatCurrency(amount)}><div className="text-right font-medium">${formatted}</div></CustomTooltip>
+            return <CustomTooltip content={formatCurrency(amount)}><div className="text-center font-medium">${formatted}</div></CustomTooltip>
         }
     },
     {
@@ -101,11 +101,21 @@ export const columns: ColumnDef<ProtocolResult>[] = [
     },
     {
         accessorKey: "updated",
-        header: 'Last Update',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    Last Update
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             const timestamp = Number(row.getValue("updated"));
             const formatted = formatElapsedTime(timestamp);
-            return <div className="text-right font-medium">{formatted}</div>
+            return <div className="text-center font-medium">{formatted}</div>
         }
     },
     {
