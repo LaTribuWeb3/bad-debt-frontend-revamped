@@ -36,8 +36,8 @@ export function DatePicker({date, setDate}: DatePickerProps) {
                         !date && "text-muted-foreground"
                     )}
                 >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
                     {date ? format(date, "P") : <span>Pick a date</span>}
+                    <CalendarIcon className="ml-2 h-4 w-4" />
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0">
