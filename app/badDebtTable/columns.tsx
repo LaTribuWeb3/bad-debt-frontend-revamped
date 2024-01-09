@@ -24,13 +24,13 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             )
         },
         cell: ({ row }) => {
-            const name: string = row.getValue("name").toLowerCase();
+            const name: string = row.getValue("name");
             return <div className="flex items-center mx-auto max-w-[200px]">
-                <div className="rounded-full overflow-hidden h-7 w-7">
-                    <Image src={`/images/platforms/${name}.webp`} width={28} height={28} alt={"platform logo"} />
+                <div className="rounded-full overflow-hidden min-h-7 min-w-7">
+                    <Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} />
                 </div>
                 <div className="ml-1 flex items-center">
-                    {displayAliases[name] ? displayAliases[name] : name}
+                    {displayAliases[name.toLowerCase()] ? displayAliases[name.toLowerCase()] : name}
                 </div>
             </div>
         }
