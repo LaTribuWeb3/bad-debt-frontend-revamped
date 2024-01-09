@@ -7,6 +7,7 @@ import { CustomTooltip } from "@/components/ui/tooltipAbstraction";
 import { ArrowUpDown } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { displayAliases } from "@/lib/config";
 
 export const columns: ColumnDef<ProtocolResult>[] = [
     {
@@ -23,13 +24,13 @@ export const columns: ColumnDef<ProtocolResult>[] = [
             )
         },
         cell: ({ row }) => {
-            const name: string = row.getValue("name");
+            const name: string = row.getValue("name").toLowerCase();
             return <div className="flex items-center mx-auto max-w-[200px]">
                 <div className="rounded-full overflow-hidden h-7 w-7">
-                    <Image src={`/images/platforms/${name.toLowerCase()}.webp`} width={28} height={28} alt={"platform logo"} />
+                    <Image src={`/images/platforms/${name}.webp`} width={28} height={28} alt={"platform logo"} />
                 </div>
                 <div className="ml-1 flex items-center">
-                    {name}
+                    {displayAliases[name] ? displayAliases[name] : name}
                 </div>
             </div>
         }
