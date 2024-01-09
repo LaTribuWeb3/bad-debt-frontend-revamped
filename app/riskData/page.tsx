@@ -28,7 +28,5 @@ export default function RiskDataPage() {
     }
   }, [platform]);
 
-  return <div>
-    
-  </div>;
+  return <div></div>;
 }
