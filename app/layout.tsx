@@ -5,7 +5,6 @@ import { Providers } from './providers';
 import Footer from './Footer';
 import ThemeSwitch from './ThemeSwitch';
 import TopBar from './TopBar';
-import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,16 +35,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <TopBar />
           <ThemeSwitch />
           <main className="flex bg-white dark:bg-darkThemeBg min-h-screen text-black dark:text-white flex-col items-center justify-between px-72 py-24 pb-0">
-            <Image
-              className="pb-32"
-              src={'/images/white-wordmark.png'}
-              alt={'Risk DAO logo'}
-              width={637}
-              height={134}
-            />
             {children}
-            <Footer />
           </main>
+            <Footer />
         </Providers>
       </body>
     </html>
