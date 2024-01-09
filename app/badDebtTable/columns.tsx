@@ -131,6 +131,14 @@ export const columns: ColumnDef<ProtocolResult>[] = [
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
+    },
+    cell: ({ row }) => {
+      const platform = row.original.name;
+      return (
+        <div className="text-center font-medium">
+          <Link href={`/riskData?platform=${platform}`}>1</Link>
+        </div>
+      );
     }
   },
   {

@@ -12,14 +12,19 @@ export default function RiskDataPage() {
 
   useEffect(() => {
     async function getGraphData(platform: string) {
-      const apiResponseGraph = await fetch(`${API_URL}/getcurrentclfgraphdata?platform=${platform}&latest=true`);
-      const apiResponseAverages = await fetch(`${API_URL}/getcurrentaverageclfs?platform=${platform}&latest=true`);
-      console.log('apiResponseAverages', apiResponseAverages);
-      // setAverageData(apiResponseAverages.data);
-      // setGraphData(apiResponseGraph.data);
+      await fetch(`${API_URL}/getcurrentclfgraphdata?platform=${platform}&latest=true`)
+        .then((res) => res.json())
+        .then((data) => {
+          setGraphData(data);
+        });
+      await fetch(`${API_URL}/getcurrentaverageclfs?platform=${platform}&latest=true`)
+        .then((res) => res.json())
+        .then((data) => {
+          setAverageData(data);
+        });
     }
     if (platform) {
-      getGraphData(removeSpaces(platform));
+      getGraphData(removeSpaces(platform.toLowerCase()));
     }
   }, [platform]);
 
