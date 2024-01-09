@@ -1,9 +1,9 @@
 export default function RiskDataLayout({ children }: { children: React.ReactNode }) {
   return (
-    <section>
+    <section className="flex flex-col items-center justify-center">
       <div className="text-9xl font-bold">Risk Level Index</div>
-      <div className="clfSubtitle" style={{ marginBottom: '5%' }}>
-        <p style={{ color: 'primary', fontSize: '150%', marginBottom: '4vh' }}>
+      <div>
+        <p className="text-light-subtitle dark:text-dark-subtitle text-4xl">
           The Risk Level Index compares lending markets’ economic risk levels (<em>r</em>) over time as they are being
           calculated by the{' '}
           <a
@@ -21,8 +21,8 @@ export default function RiskDataLayout({ children }: { children: React.ReactNode
           rel="noreferrer"
           href="https://medium.com/risk-dao/announcing-the-risk-level-index-ca5dcef95303"
         >
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-            <button className="ReadMoreButton">Read More</button>
+          <div>
+            <button>Read More</button>
           </div>
         </a>
       </div>

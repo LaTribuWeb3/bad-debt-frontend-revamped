@@ -41,7 +41,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        darkThemeBg: '#11191f'
+        darkThemeBg: '#11191f',
+        'dark-subtitle': '#bbc6ce',
+        'light-subtitle': '#415462'
+        
       },
       backgroundColor: {
         'row-odd': '#f7fafc',
