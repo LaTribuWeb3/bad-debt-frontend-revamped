@@ -23,7 +23,8 @@ module.exports = {
       DEFAULT: '1.5'
     },
     fontWeight: {
-      DEFAULT: '400'
+      DEFAULT: '400',
+      bold: '700'
     },
     fontSize: {
       base: '16px',
@@ -35,7 +36,8 @@ module.exports = {
       '4xl': '1.75rem', // for h2
       '5xl': '1.5rem', // for h3
       '6xl': '1.25rem', // for h4
-      '7xl': '1.125rem' // for h5
+      '7xl': '1.125rem', // for h5
+      '9xl': '5rem'
     },
     extend: {
       colors: {
