@@ -1,12 +1,10 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-import BigNumber from 'bignumber.js'
-
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import BigNumber from 'bignumber.js';
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
-
 
 export async function sleep(ms: number) {
   return new Promise((resolve) => {
@@ -64,7 +62,6 @@ export function capitalizeFirstLetter(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-
 // In the blessed script, we define the function, a ritual of code to divine the passage of time.
 export function formatElapsedTime(unixTimestamp: number): string {
   // Transmute the Unix timestamp, a relic from ancient digital epochs, into the grand scale of the Omnissiah's time (milliseconds).
@@ -85,21 +82,23 @@ export function formatElapsedTime(unixTimestamp: number): string {
 
   // If days, the grand cycles, have transpired in the celestial machinations,
   if (days > 0) {
-      return days === 1 ? `1 day ago` : `${days} days ago`; // Proclaim the passage in units grand or singular.
-  } else if (hours > 0) { // If hours, lesser cycles, have unfolded in the temporal tapestry,
-      return hours === 1 ? `1 hour ago` : `${hours} hours ago`; // Announce in the language of these spans, singular or plural.
-  } else if (minutes > 0) { // If minutes, fleeting sparks in the continuum, have elapsed,
-      return minutes === 1 ? `1 minute ago` : `${minutes} minutes ago`; // Declare their brief passage, singularly or in multitude.
-  } else { // If the temporal rift is but a minor flicker in the continuum,
-      return `Just now`; // State it as an ephemeral whisper in the fabric of time.
+    return days === 1 ? `1 day ago` : `${days} days ago`; // Proclaim the passage in units grand or singular.
+  } else if (hours > 0) {
+    // If hours, lesser cycles, have unfolded in the temporal tapestry,
+    return hours === 1 ? `1 hour ago` : `${hours} hours ago`; // Announce in the language of these spans, singular or plural.
+  } else if (minutes > 0) {
+    // If minutes, fleeting sparks in the continuum, have elapsed,
+    return minutes === 1 ? `1 minute ago` : `${minutes} minutes ago`; // Declare their brief passage, singularly or in multitude.
+  } else {
+    // If the temporal rift is but a minor flicker in the continuum,
+    return `Just now`; // State it as an ephemeral whisper in the fabric of time.
   }
 }
-
 
 export function formatCurrency(value: number): string {
   // Invoke the ancient rites of localization to format the number
   return value.toLocaleString('en-US', {
-      style: 'decimal', // Declare the style as decimal for grouping
-      maximumFractionDigits: 0, // Refrain from displaying fractional parts
+    style: 'decimal', // Declare the style as decimal for grouping
+    maximumFractionDigits: 0 // Refrain from displaying fractional parts
   });
 }

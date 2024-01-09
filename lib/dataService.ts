@@ -10,18 +10,18 @@ import { ProtocolResult } from '@/app/badDebtTable/ProtocolResult.type';
 // return response.data;
 
 export default class DataService {
-    /**
-     * get the protocol data from cache or github
-     * @param dateStr Should be in the correct format d.m.yyyy or latest. Ex: 1.2.2023 for february the 1st, 2023
-     * @returns
-     */
-    static async GetProtocolResults(dateStr = 'latest'): Promise<ProtocolResult[]> {
-        const protocolResults = await SimpleCacheService.GetAndCache(
-            `GetProtocolResults-${dateStr}`,
-            () => GetGithubData(dateStr),
-            15 * 60 * 1000
-        );
+  /**
+   * get the protocol data from cache or github
+   * @param dateStr Should be in the correct format d.m.yyyy or latest. Ex: 1.2.2023 for february the 1st, 2023
+   * @returns
+   */
+  static async GetProtocolResults(dateStr = 'latest'): Promise<ProtocolResult[]> {
+    const protocolResults = await SimpleCacheService.GetAndCache(
+      `GetProtocolResults-${dateStr}`,
+      () => GetGithubData(dateStr),
+      15 * 60 * 1000
+    );
 
-        return protocolResults;
-    }
+    return protocolResults;
+  }
 }

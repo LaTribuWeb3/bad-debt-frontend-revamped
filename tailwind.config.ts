@@ -1,21 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  darkMode: ['class'],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      'sans': ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+      sans: [
+        'system-ui',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Ubuntu',
+        'Cantarell',
+        'Noto Sans',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji'
+      ]
     },
     lineHeight: {
-      DEFAULT: '1.5',
+      DEFAULT: '1.5'
     },
     fontWeight: {
-      DEFAULT: '400',
+      DEFAULT: '400'
     },
     fontSize: {
       base: '16px',
@@ -23,11 +31,11 @@ module.exports = {
       lg: '18px',
       xl: '19px',
       '2xl': '20px',
-      '3xl': '2rem',     // for h1
-      '4xl': '1.75rem',  // for h2
-      '5xl': '1.5rem',   // for h3
-      '6xl': '1.25rem',  // for h4
-      '7xl': '1.125rem', // for h5
+      '3xl': '2rem', // for h1
+      '4xl': '1.75rem', // for h2
+      '5xl': '1.5rem', // for h3
+      '6xl': '1.25rem', // for h4
+      '7xl': '1.125rem' // for h5
     },
     extend: {
       colors: {
@@ -41,23 +49,23 @@ module.exports = {
       },
       borderColor: {
         'dark-border': '#000000',
-        'dark-row-border': '#000000',
+        'dark-row-border': '#000000'
       },
       keyframes: {
-        "accordion-down": {
+        'accordion-down': {
           from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 'var(--radix-accordion-content-height)' }
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 }
+        }
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out'
+      }
+    }
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require('tailwindcss-animate')]
+};
