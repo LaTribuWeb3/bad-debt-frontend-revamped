@@ -9,3 +9,5 @@ export const displayAliases: StringAliasMap = {
   inverse: 'Inverse Finance - frontier (deprecated)',
   'morpho-blue': 'Morpho Blue Flagship Markets'
 };
+
+export const API_URL = 'https://api.dex-history.la-tribu.xyz/api';
