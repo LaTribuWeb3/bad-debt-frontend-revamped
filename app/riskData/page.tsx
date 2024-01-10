@@ -12,12 +12,12 @@ export default function RiskDataPage() {
 
   useEffect(() => {
     async function getGraphData(platform: string) {
-      await fetch(`${API_URL}/getcurrentclfgraphdata?platform=${platform}&latest=true`)
+      await fetch(`${API_URL}/clf/getcurrentclfgraphdata?latest=true&platform=${platform}`)
         .then((res) => res.json())
         .then((data) => {
           setGraphData(data);
         });
-      await fetch(`${API_URL}/getcurrentaverageclfs?platform=${platform}&latest=true`)
+      await fetch(`${API_URL}/clf/getcurrentaverageclfs?latest=true&platform=${platform}`)
         .then((res) => res.json())
         .then((data) => {
           setAverageData(data);
