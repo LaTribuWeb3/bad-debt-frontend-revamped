@@ -28,5 +28,11 @@ export default function RiskDataPage() {
     }
   }, [platform]);
 
-  return <div></div>;
+  return <div>
+    <div id='platformPresentation'>
+    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
+
+    </div>
+    </div>
+  </div>;
 }
