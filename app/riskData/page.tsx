@@ -1,4 +1,5 @@
 'use client';
+import { Skeleton } from '@/components/ui/skeleton';
 import { API_URL } from '@/lib/config';
 import { removeSpaces } from '@/lib/utils';
 import { useSearchParams } from 'next/navigation';
@@ -28,6 +29,11 @@ export default function RiskDataPage() {
     }
   }, [platform]);
 
+  if(!averageData){
+    return <Skeleton />
+  }
+
+
   return <div>
     <div id='platformPresentation'>
       <div id='labelsDiv'>
@@ -38,6 +44,7 @@ export default function RiskDataPage() {
 
         </div>
         <div id='riskLevelLabel'>
+          {}
 
         </div>
 
