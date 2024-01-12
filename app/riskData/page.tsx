@@ -30,9 +30,26 @@ export default function RiskDataPage() {
 
   return <div>
     <div id='platformPresentation'>
-    <div className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
+      <div id='labelsDiv'>
+        <div id='protocolLabel'>
+          {platform}
+        </div>
+        <div id='blockchainLabel'>
 
-    </div>
+        </div>
+        <div id='riskLevelLabel'>
+
+        </div>
+
+      </div>
+      <div id='mainDiv' className='shadow-[0_3px_10px_rgb(0,0,0,0.2)]'>
+        <div id='formulaDiv'>
+
+        </div>
+        <div id='graphDiv'>
+
+        </div>
+      </div>
     </div>
   </div>;
 }
