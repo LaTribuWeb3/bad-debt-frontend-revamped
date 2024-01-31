@@ -43,8 +43,8 @@ module.exports = {
       colors: {
         darkThemeBg: '#11191f',
         'dark-subtitle': '#bbc6ce',
-        'light-subtitle': '#415462'
-        
+        'light-subtitle': '#415462',
+        darkHeader: '#18232C',
       },
       backgroundColor: {
         'row-odd': '#f7fafc',
